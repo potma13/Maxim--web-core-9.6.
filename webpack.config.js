@@ -64,10 +64,22 @@ module.exports = {
     ],
   },
   plugins: [
-    // Подключаем файл html, стили и скрипты встроятся автоматически
+    // Главная страница
     new HtmlWebpackPlugin({
-      title: 'Webpack 5 Starter',
+      title: 'Главная страница',
       template: './src/index.html',
+      filename: 'index.html',
+      inject: true,
+      minify: {
+        removeComments: true,
+        collapseWhitespace: false,
+      }
+    }),
+    // Дополнительные страницы
+    new HtmlWebpackPlugin({
+      title: 'Услуги и сервисы',
+      template: './src/services.html',
+      filename: 'services.html',
       inject: true,
       minify: {
         removeComments: true,

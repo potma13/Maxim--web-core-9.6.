@@ -8,8 +8,7 @@ body {
     color: #1B1C21;
 }
 .side-menu {
-    padding: 24px;
-    width: 320px;
+    padding: 16px;
     max-height: 100%;
     overflow-y: auto;
 }
@@ -45,7 +44,7 @@ body {
 .menu__text:hover::before { 
     position: absolute;
     content: "";
-    left: -24px;
+    left: -16px;
     top: 6px;
     width: 4px;
     height: 30px;
@@ -87,7 +86,7 @@ body {
 }
 .footer__text:last-child {
     display: flex;
-    margin-top: 25px;
+    margin-top: 10px;
     gap: 10px;
     font-size: 16px;
     font-weight: 500;
