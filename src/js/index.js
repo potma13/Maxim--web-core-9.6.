@@ -1,7 +1,4 @@
 import '../scss/style.scss'
-import '../scss/stylesheet.scss'
-import '../scss/adaptive.scss'
-import '../scss/services.scss'
 
 // Переход на страницу сервисы 
     // Обработчик кликов по пунктам меню
