@@ -1,16 +1,26 @@
 import '../scss/style.scss'
 
 // Переход на страницу сервисы 
-    // Обработчик кликов по пунктам меню
-document.addEventListener('DOMContentLoaded', function() {
-    const menuItems = document.querySelectorAll('div[data-page]');
-    
-    menuItems.forEach(item => {
-        item.addEventListener('click', function() {
-            const pageUrl = this.getAttribute('data-page');
-            window.location.href = pageUrl;
-        });
-    });
+const menu = document.getElementById('servicesMenu');
+const openBtn = document.querySelector('.open-menu');
+const closeBtn = document.querySelector('.close-menu');
+
+openBtn.addEventListener('click', () => {
+  menu.classList.add('active');
+  closeBtn.style.display = 'inline-block';
+});
+
+closeBtn.addEventListener('click', () => {
+  menu.classList.remove('active');
+  openBtn.style.display = 'inline-block';
+});
+
+// Временная прокрутка колесиком мыши потом заменю на swiper
+const scrollMenu = document.querySelector('.scroll-menu');
+
+scrollMenu.addEventListener('wheel', (e) => {
+  e.preventDefault();
+  scrollMenu.scrollLeft += e.deltaY;
 });
 
 // Рамка при клике

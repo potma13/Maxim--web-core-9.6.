@@ -5,27 +5,12 @@
 }
 .side-menu {
     padding: 16px;
+    width: 320px;
     max-height: 100%;
     overflow-y: auto;
 }
 .side-menu::-webkit-scrollbar {
     display: none;
-}
-.header-button-group {
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
-.header__button {
-    cursor: pointer;
-}
-.left-buttons {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
-.header__button:last-child {
-    margin-left: auto;
 }
 .menu {
     margin-top: 20px;
@@ -64,13 +49,6 @@
 }
 .menu__footer {
     margin-top: 20px;
-}
-.footer-button-group {
-    display: flex;
-    gap: 15px;
-}
-.footer__button {
-    cursor: pointer;
 }
 .footer-text-group {
     margin-top: 10px;
