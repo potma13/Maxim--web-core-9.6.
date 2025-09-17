@@ -2,7 +2,34 @@
     background: none;
     border: none;    
 }
+.header-button-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.header__button {
+    cursor: pointer;
+}
+.header__button:last-child {
+    margin-left: auto;
+}
+.left-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.right-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-left: auto;
+}
 .footer__button {
     background: none;
-    border: none;    
+    border: none; 
+    cursor: pointer;   
+}
+.footer-button-group {
+    display: flex;
+    gap: 15px;
 }
