@@ -10,6 +10,9 @@
     transition: transform 0.4s ease;
     overflow-y: auto;
 }
+.services::-webkit-scrollbar {
+    display: none;
+}
 .services.active {
     transform: translateX(0);
 }
