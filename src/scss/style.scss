@@ -1,7 +1,9 @@
 @import "fonts/fonts.scss";
+@import "blocks/sidemenu.scss";
 @import "blocks/services.scss";
 @import "elements/button.scss";
-@import "blocks/sidemenu.scss";
+@import "elements/brand.scss";
+@import url(https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css);
 
 * {
     margin: 0;

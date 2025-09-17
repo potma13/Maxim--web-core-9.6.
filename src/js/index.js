@@ -1,4 +1,6 @@
 import '../scss/style.scss'
+import './swiper/swiper.js';
+
 
 // Переход на страницу сервисы 
 const menu = document.getElementById('servicesMenu');

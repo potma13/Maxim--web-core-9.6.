@@ -1,14 +1,13 @@
-.header__button {
+.header__button,
+.footer__button {
     background: none;
-    border: none;    
+    border: none;
+    cursor: pointer;
 }
 .header-button-group {
     display: flex;
     align-items: center;
     width: 100%;
-}
-.header__button {
-    cursor: pointer;
 }
 .header__button:last-child {
     margin-left: auto;
@@ -23,11 +22,6 @@
     gap: 15px;
     align-items: center;
     margin-left: auto;
-}
-.footer__button {
-    background: none;
-    border: none; 
-    cursor: pointer;   
 }
 .footer-button-group {
     display: flex;
