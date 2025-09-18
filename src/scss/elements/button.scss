@@ -27,3 +27,18 @@
     display: flex;
     gap: 15px;
 }
+.lang-btn {
+    background: none;
+    border: none;
+    color: #1B1C21;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: TT Lakes;
+}
+.lang-btn:hover {
+    color: #7E7E82;
+}
+.lang-btn.active {
+    color: #7E7E82;
+}

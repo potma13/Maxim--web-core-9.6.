@@ -1,9 +1,8 @@
 import '../scss/style.scss'
 import './swiper/swiper.js';
 
-
 // Переход на страницу сервисы 
-const menu = document.getElementById('servicesMenu');
+const menu = document.getElementById('sideMenu');
 const openBtn = document.querySelector('.open-menu');
 const closeBtn = document.querySelector('.close-menu');
 
@@ -76,5 +75,32 @@ document.addEventListener('DOMContentLoaded', function() {
             // Возвращаем оригинальный текст
             tabHeaderText.textContent = originalText;
         }
+    });
+});
+
+// Переключение языка
+document.addEventListener('DOMContentLoaded', function() {
+    const langButtons = document.querySelectorAll('.lang-btn');
+    
+    // Активируем RU по умолчанию
+    const ruButton = document.querySelector('.lang-btn[data-lang="ru"]');
+    if (ruButton) {
+        ruButton.classList.add('active');
+    }
+    
+    // Обработчик клика по кнопкам
+    langButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Убираем активный класс у всех кнопок
+            langButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Добавляем активный класс текущей кнопке
+            this.classList.add('active');
+            
+            // Здесь можно добавить логику смены языка
+            const selectedLang = this.getAttribute('data-lang');
+            console.log('Выбран язык:', selectedLang);
+            // changeLanguage(selectedLang); // Ваша функция смены языка
+        });
     });
 });
