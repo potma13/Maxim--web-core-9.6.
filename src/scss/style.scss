@@ -14,6 +14,16 @@ body {
     font-family: TT Lakes;
     color: #1B1C21;
 }
+
+@media (max-width: 767px)  {
+    .expand:nth-of-type(2),
+    .expand:nth-of-type(3) {
+        display: none;
+    }
+    .hide-mobile {
+        display: none;
+    }
+}
 @media (min-width: 768px)  {
     .brand-container {
         width: 768px;
@@ -21,15 +31,19 @@ body {
     .brand__content {
         height: auto;
         display: grid;
+        padding: unset;
         gap: 20px;
         grid-template-columns: 1fr 1fr 1fr;
     }
     .scroll-menu {
-    flex-wrap: wrap;
-    white-space: normal;
+        flex-wrap: wrap;
+        white-space: normal;
+    }
+    .menu__footer {
+        margin-top: 250px;
     }
 }
-@media (min-width: 1120px) {
+@media (min-width: 1366px) {
     .brand-container {
         width: 1120px;
     }
@@ -41,8 +55,29 @@ body {
         
     }
     .scroll-menu {
-    flex-wrap: wrap;
-    white-space: normal;
+        flex-wrap: wrap;
+        white-space: normal;
     }
+    .close-menu {
+        display: none;
+    }
+    .services > .side-menu:first-of-type {
+        display: none !important;
+    }
+    #sideMenu {
+        position: relative !important;
+        transform: none !important;
+        transition: none !important;
+        display: block !important;
+        width: 320px;
+        height: auto;
+    }
+    .services {
+        display: flex;
+        align-items: flex-start;
+    }
+    .tab-menu {
+        flex: 1;
+    }    
 }
 
