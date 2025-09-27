@@ -14,3 +14,35 @@ body {
     font-family: TT Lakes;
     color: #1B1C21;
 }
+@media (min-width: 768px)  {
+    .brand-container {
+        width: 768px;
+    }
+    .brand__content {
+        height: auto;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .scroll-menu {
+    flex-wrap: wrap;
+    white-space: normal;
+    }
+}
+@media (min-width: 1120px) {
+    .brand-container {
+        width: 1120px;
+    }
+    .brand__content {
+        height: auto;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        
+    }
+    .scroll-menu {
+    flex-wrap: wrap;
+    white-space: normal;
+    }
+}
+
