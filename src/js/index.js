@@ -41,8 +41,22 @@ window.onload = function() {
 document.addEventListener('DOMContentLoaded', function() {
     const expandButtons = document.querySelectorAll('.expand');
     const tabHeaderText = document.querySelector('.tab-header__text');
-    const originalText = tabHeaderText.textContent;
-    const additionalText = ' Мы предлагаем полный спектр услуг по ремонту и обслуживанию техники Dell. Наши специалисты имеют сертификаты производителя и используют оригинальные запчасти.';
+    const getBaseText = () => {
+    const base = 'Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.';
+    const width = window.innerWidth;
+    
+    if (width >= 768 && width < 1366) {
+        return base + '\n\nМы успешно работаем с 1992 года и заслужили репутацию надежного партнера';
+    } else if (width >= 1366) {
+        return base + '\n\nМы успешно работаем с 1992 года и заслужили репутацию надежного партнера, что подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь, советуют нас родным и близким.';
+    }
+    return base;
+};
+
+const additionalText = '\n\nМы предлагаем полный спектр услуг по ремонту и обслуживанию техники Dell. Наши специалисты имеют сертификаты производителя и используют оригинальные запчасти.';
+
+// Инициализация начального текста
+tabHeaderText.textContent = getBaseText();
 
     // Первый expand - текст
     expandButtons[0].addEventListener('click', function() {
@@ -52,11 +66,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (text.textContent === 'Читать далее') {
             icon.src = 'img/icon_up.png';
             text.textContent = 'Скрыть';
-            tabHeaderText.textContent = originalText + additionalText;
+            tabHeaderText.textContent = getBaseText() + additionalText;
         } else {
             icon.src = 'img/icon_down.png';
             text.textContent = 'Читать далее';
-            tabHeaderText.textContent = originalText;
+            tabHeaderText.textContent = getBaseText();
         }
     });
 

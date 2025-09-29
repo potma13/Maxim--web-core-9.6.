@@ -15,6 +15,13 @@
     overflow: hidden;
     position: relative;
 }
+.tab-header-content {
+    width: 100%;
+}
+.text-tablet,
+.text-desktop {
+    display: none;
+}
 .line {
     margin-left: auto;
     width: 2px;
