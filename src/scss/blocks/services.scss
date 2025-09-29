@@ -11,6 +11,9 @@
 .tab-container {
     background-color: #F8F8F8;;
     padding: 16px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
 }
 .line {
     margin-left: auto;
@@ -38,6 +41,7 @@
     display: flex;
     overflow-x: auto;
     white-space: nowrap;
+    gap: 10px;
 }
 .scroll-menu::-webkit-scrollbar {
     display: none;
@@ -78,6 +82,9 @@
 .disclaimer__text {
     font-size: 14px;
     line-height: 20px;
+}
+.tab__footer {
+    margin-top: 25px;
 }
 .tab-footer__commercial {
     display: inline-flex;

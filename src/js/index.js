@@ -16,14 +16,6 @@ closeBtn.addEventListener('click', () => {
   openBtn.style.display = 'inline-block';
 });
 
-// Временная прокрутка колесиком мыши потом заменю на swiper
-const scrollMenu = document.querySelector('.scroll-menu');
-
-scrollMenu.addEventListener('wheel', (e) => {
-  e.preventDefault();
-  scrollMenu.scrollLeft += e.deltaY;
-});
-
 // Рамка при клике
 window.onload = function() {
     const menuItems = document.querySelectorAll('.scroll-menu__text');
@@ -46,36 +38,52 @@ window.onload = function() {
     });
 };
 
-// Показать/Скрыть текст
 document.addEventListener('DOMContentLoaded', function() {
-    const expandButton = document.querySelector('.expand');
-    const expandIcon = document.querySelector('.expand__icon img');
-    const expandText = document.querySelector('.expand__text');
+    const expandButtons = document.querySelectorAll('.expand');
     const tabHeaderText = document.querySelector('.tab-header__text');
-    
-    // Дополнительный текст, который будет появляться
-    const additionalText = ' Мы предлагаем полный спектр услуг по ремонту и обслуживанию техники Dell. Наши специалисты имеют сертификаты производителя и используют оригинальные запчасти.';
-    
-    // Сохраняем оригинальный текст
     const originalText = tabHeaderText.textContent;
-    
-    expandButton.addEventListener('click', function() {
-        if (expandText.textContent === 'Читать далее') {
-            // Меняем на "Скрыть" и меняем иконку
-            expandIcon.src = 'img/icon_up.png';
-            expandText.textContent = 'Скрыть';
-            
-            // Добавляем дополнительный текст
+    const additionalText = ' Мы предлагаем полный спектр услуг по ремонту и обслуживанию техники Dell. Наши специалисты имеют сертификаты производителя и используют оригинальные запчасти.';
+
+    // Первый expand - текст
+    expandButtons[0].addEventListener('click', function() {
+        const icon = this.querySelector('img');
+        const text = this.querySelector('.expand__text');
+        
+        if (text.textContent === 'Читать далее') {
+            icon.src = 'img/icon_up.png';
+            text.textContent = 'Скрыть';
             tabHeaderText.textContent = originalText + additionalText;
         } else {
-            // Возвращаем обратно на "Читать далее" и меняем иконку
-            expandIcon.src = 'img/icon_down.png';
-            expandText.textContent = 'Читать далее';
-            
-            // Возвращаем оригинальный текст
+            icon.src = 'img/icon_down.png';
+            text.textContent = 'Читать далее';
             tabHeaderText.textContent = originalText;
         }
     });
+
+    // Второй и третий expand - слайды
+    expandButtons[1].addEventListener('click', function() {
+        toggleAllSlides(this);
+    });
+
+    expandButtons[2].addEventListener('click', function() {
+        toggleAllSlides(this);
+    });
+
+    function toggleAllSlides(button) {
+        const icon = button.querySelector('img');
+        const text = button.querySelector('.expand__text');
+        const allSlides = button.closest('.brand-container').querySelectorAll('.swiper-slide');
+        
+        if (text.textContent === 'Показать всё') {
+            icon.src = 'img/icon_up.png';
+            text.textContent = 'Скрыть';
+            allSlides.forEach(slide => slide.style.display = 'block');
+        } else {
+            icon.src = 'img/icon_down.png';
+            text.textContent = 'Показать всё';
+            allSlides.forEach(slide => slide.style.display = '');
+        }
+    }
 });
 
 // Переключение языка

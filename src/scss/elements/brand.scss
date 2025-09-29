@@ -17,7 +17,7 @@
     padding: 16px;
     background-color: white;
     border-radius: 6px;
-    width: 240px;
+    width: 220px;
     height: 70px;
     justify-content: space-between;
     align-items: center;
@@ -37,13 +37,18 @@
 .brand-container:nth-of-type(3) {
     margin-top: 40px;
 }
+.swiper-slide {
+    width: auto !important;
+    height: auto !important;
+    flex-shrink: 0;
+}
 .brand-container:nth-of-type(2) {
     .brand__box {
         display: flex;
         padding: 16px;
         background-color: white;
         border-radius: 6px;
-        width: 240px;
+        width: 220px;
         height: 160px;
         justify-content: space-between;
         align-items: center;
@@ -96,4 +101,29 @@
         flex-direction: column;
         align-items: flex-start;
     }
+}
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 16px;
+}
+.price-table thead {
+    background: #F8F8F8;
+    color: #7E7E82;
+    font-size: 14px;
+    text-align: left;
+}
+.price-table th, 
+.price-table td {
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+}
+.price-table tr:last-child td {
+    border-bottom: none;
+}
+.price {
+    white-space: nowrap;
 }
